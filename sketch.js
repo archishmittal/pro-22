@@ -32,7 +32,7 @@ function setup() {
 	engine = Engine.create();
 	world = engine.world;
 
-var option={restitution:0.5, isStatic:true};
+var option={restitution:1, isStatic:true};
 
 	starBody = Bodies.circle(650 , 30 , 5 , option);
 	World.add(world, starBody);
@@ -49,7 +49,11 @@ function draw() {
   fairy.velocityX=0;
 fairyvelocityY=0;
 
-if(starBody.position.y>470){}
+if(starBody.position.y>470){
+
+	star.velocityY=0;
+    star.velocityX=0;
+}
 
 keyPressed();
 
@@ -75,7 +79,7 @@ function keyPressed() {
 
 		if (keyDown("DOWN_ARROW")) {
 			star.velocityX=0;
-			star.velocityY=2;
+			star.velocityY=1;
 			}
 
 		
